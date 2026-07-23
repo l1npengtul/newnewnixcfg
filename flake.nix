@@ -97,11 +97,11 @@
     };
 
     shhh = {
-      url = "git+ssh://git@codeberg.org/l1npengtul/shhh.git?ref=senpai&shallow=1";
+      url = "git+ssh://git@git.sr.ht/~l1npengtul/shhh?ref=senpai&shallow=1";
     };
 
     randomshit = {
-      url = "git+ssh://git@github.com/l1npengtul/randomshit.git?ref=senpai&shallow=1";
+      url = "git+ssh://git@git.sr.ht/~l1npengtul/randomshit?ref=senpai&shallow=1";
       flake = false;
     };
   };
