@@ -1,0 +1,26 @@
+[discord]
+token = ""
+status = "Serving Flesh Coffee since 2018"
+
+[starboard]
+requirement = 4
+sending_channel = 1358681650493395024
+emoji = ["❤", "🔥", "⭐", "🤍"]
+excluded_channels = []
+
+[starboard.overrides.1106769045115646002]
+requirement = 10
+
+[starboard.ignore_older_than]
+secs = 7776000
+nanos = 0
+
+[places]
+db_path = ""
+
+[modmail]
+channel = 1113475764554317938
+bot_message = 1390392502732980274
+roles = [1106453705273917460]
+log_channel = 1106754349046177812
+

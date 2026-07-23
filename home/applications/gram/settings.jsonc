@@ -1,0 +1,176 @@
+// Gram settings
+//
+// For information on how to configure Gram, see the Gram
+// documentation: gram://docs/configuring-gram
+//
+// To see all of Gram's default settings without changing your
+// custom settings, run `gram: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "status_bar": {
+    "active_encoding_button": "enabled"
+  },
+  "title_bar": {
+    "show_branch_icon": false,
+    "show_menus": false
+  },
+  "project_panel": {
+    "folder_icons": true,
+    "file_icons": true
+  },
+  "window_decorations": "server",
+  "diagnostics": {
+    "inline": {
+      "enabled": true
+    }
+  },
+  "languages": {
+    "Lua": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true
+      },
+      "show_completions_on_input": true,
+      "use_autoclose": false,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "Markdown-Inline": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "use_autoclose": false,
+      "indent_guides": {
+        "enabled": true
+      },
+      "hard_tabs": false
+    },
+    "TOML": {
+      "prettier": {
+        "allowed": true
+      },
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "use_autoclose": false,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "YAML": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "use_autoclose": false,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "SQL": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "use_autoclose": false,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "Markdown": {
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "format_on_save": "off",
+      "use_on_type_format": true,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "Nix": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "use_autoclose": false,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "HTML": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "JavaScript": {
+      "colorize_brackets": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "JSONC": {
+      "inlay_hints": {
+        "enabled": true
+      },
+      "show_completions_on_input": true,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "JSON": {
+      "colorize_brackets": true,
+      "show_completions_on_input": true,
+      "indent_guides": {
+        "enabled": true
+      }
+    },
+    "Rust": {
+      "colorize_brackets": true,
+      "show_completions_on_input": true,
+      "inlay_hints": {
+        "show_background": true,
+        "enabled": true,
+        "show_type_hints": true
+      },
+      "indent_guides": {
+        "enabled": true
+      }
+    }
+  },
+  "minimum_contrast_for_highlights": 100.0,
+  "ui_font_family": "rainyhearts",
+  "buffer_font_family": "ComicShannsMono Nerd Font",
+  "base_keymap": "JetBrains",
+  "icon_theme": "Gram (Default)",
+  "ui_font_size": 16,
+  "buffer_font_size": 15.0,
+  "theme": "Rose Quartz",
+  "load_direnv": "shell_hook",
+  "restore_on_startup": "last_session",
+}

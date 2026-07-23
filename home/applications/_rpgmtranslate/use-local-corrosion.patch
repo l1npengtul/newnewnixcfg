@@ -1,0 +1,18 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 934e05b..4dd8d95 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -311,13 +311,7 @@ set(RUST_CRATE_DIR "${CMAKE_SOURCE_DIR}/rust")
+ set(GENERATED_DIR  "${CMAKE_CURRENT_BINARY_DIR}")
+ set(RPGMTRANSLATE_RUST_HEADER "${GENERATED_DIR}/rpgmtranslate.h")
+ 
+-include(FetchContent)
+-FetchContent_Declare(
+-    Corrosion
+-    GIT_REPOSITORY https://github.com/corrosion-rs/corrosion.git
+-    GIT_TAG v0.6.1
+-)
+-FetchContent_MakeAvailable(Corrosion)
++find_package(Corrosion REQUIRED)
+ 
+ set(RPGMTRANSLATE_RUST_FEATURES "")
