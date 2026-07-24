@@ -36,7 +36,7 @@ in
     };
   };
 
-  config = lib.mkOption config.services.local-serial.enable {
+  config = lib.mkIf config.services.local-serial.enable {
     boot.kernelParams = [
       "console=ttyS0,115200"
       "console=tty1"

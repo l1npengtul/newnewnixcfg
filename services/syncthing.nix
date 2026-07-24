@@ -65,7 +65,7 @@ in
             ];
           };
           "Pictures" = {
-            path = pathPrefix + "Pictures";
+            path = pathPrefix + "/Pictures";
             devices = [
               "thehouse"
               "clubcyberia"
@@ -74,7 +74,7 @@ in
             ];
           };
           "Music" = {
-            path = pathPrefix + "Music";
+            path = pathPrefix + "/Music";
             devices = [
               "thehouse"
               "clubcyberia"
@@ -83,7 +83,7 @@ in
             ];
           };
           "plugins" = {
-            path = pathPrefix + ".local/share/bottles/bottles/plugins/drive_c";
+            path = pathPrefix + "/.local/share/bottles/bottles/plugins/drive_c";
             devices = [
               "thehouse"
               "clubcyberia"

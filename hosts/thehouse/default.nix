@@ -19,9 +19,14 @@
 
   boot.initrd.availableKernelModules = [ "e1000e" ];
 
-  hardware.gpu-type = "intel";
+  hardware.gpu-type.enable = true;
+  hardware.gpu-type.type = "intel";
 
-  environment.system-profile = "server";
+  services.rember.enable = true;
+
+  hardware.audio-type.enable = false;
+
+  services.kde-desktop.enable = true;
 
   system.stateVersion = "26.05";
 }

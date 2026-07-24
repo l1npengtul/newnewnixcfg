@@ -135,7 +135,6 @@ in
 {
   options = {
     programs.sets = {
-      base.enable = lib.mkEnableOption "enable base program set";
       keyboard.enable = lib.mkEnableOption "enable keyboard management programs";
       programming.enable = lib.mkEnableOption "enable basic programming things";
       diskmgmt.enable = lib.mkEnableOption "disk management programs";
@@ -146,34 +145,28 @@ in
     };
   };
 
-  config =
-    lib.mkIf cfg.base.enable {
-      environment.systemPackages = base;
-    }
-    // lib.mkIf cfg.keyboard.enable {
-      environment.systemPackages = keyboard;
-      services.udev.packages = keyboard;
-    }
-    // lib.mkIf cfg.programming.enable {
-      environment.systemPackages = programming;
-      programs.git = {
-        enable = true;
-        lfs.enable = true;
-      };
-    }
-    // lib.mkIf cfg.diskmgmt.enable {
-      environment.systemPackages = diskmgmt;
-    }
-    // lib.mkIf cfg.udf.enable {
-      environment.systemPackages = udf;
-      boot.initrd.kernelModules = [ "udf" ];
-    }
-    // lib.mkIf cfg.appimage.enable {
-      programs.appimage = {
+  config = {
+  environment.systemPackages = base
+  ++ lib.lists.optionals cfg.keyboard.enable keyboard
+  ++ lib.lists.optionals cfg.programming.enable programming
+  ++ lib.lists.optionals cfg.diskmgmt.enable diskmgmt
+  ++ lib.lists.optionals cfg.udf.enable udf
+  ++ lib.lists.gaming cfg.gaming.enable gaming
+  ++ lib.lists.music cfg.music.enable music;
+
+  services.udev.packages = [] ++ lib.lists.optionals cfg.keyboard.enable keyboard;
+
+  programs.git = lib.mkIf cfg.programming.enable {
+    enable = true;
+    lfs.enable = true;
+  };
+
+  programs.appimage = lib.mkIf cfg.appimage.enable {
         enable = true;
         binfmt = true;
       };
-    }
+
+  }
     // lib.mkIf cfg.gaming.enable {
       programs.steam = {
         enable = true;
@@ -187,11 +180,6 @@ in
         ];
       };
 
-      environment.systemPackages = gaming;
-
       hardware.steam-hardware.enable = true;
-    }
-    // lib.mkIf cfg.music.enable {
-      environment.systemPackages = music;
     };
 }
