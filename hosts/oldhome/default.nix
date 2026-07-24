@@ -22,6 +22,7 @@
   services.rember.enable = true;
 
   programs.sets = {
+    enable = true;
     keyboard.enable = true;
     programming.enable = true;
     diskmgmt.enable = true;

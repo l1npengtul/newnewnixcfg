@@ -17,6 +17,10 @@
     };
 
     #madamoiselle.enable = true;
+
+    audit-auditd.enable = true;
+    headless.enable = true;
+    local-serial.enable = true;
   };
   system.zfs-cache-limiter = {
     enable = true;
