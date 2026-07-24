@@ -13,6 +13,7 @@
         directory = ".ssh";
         mode = "0700";
       }
+      "Zotero"
       ".BitwigStudio"
       ".config"
       ".local"

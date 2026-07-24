@@ -164,6 +164,8 @@ in
       lfs.enable = true;
     };
 
+    boot.initrd.kernelModules = lib.lists.optional cfg.udf.enable "udf";
+
     programs.appimage = lib.mkIf cfg.appimage.enable {
       enable = true;
       binfmt = true;
