@@ -8,6 +8,7 @@
       "Documents"
       "Videos"
       "Projects"
+      "supernote"
       {
         directory = ".ssh";
         mode = "0700";

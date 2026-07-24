@@ -54,6 +54,8 @@ let
     btrfs-progs
     zfs
     zfstools
+    ntfs3g
+    woeusb-ng
   ];
   udf = with pkgs; [ udftools ];
   gaming = with pkgs; [

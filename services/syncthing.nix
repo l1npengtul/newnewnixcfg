@@ -92,7 +92,7 @@ in
             ];
           };
           "supernote" = {
-            path = pathPrefix + "/.local/share/bottles/bottles/plugins/drive_c";
+            path = pathPrefix + "/supernote";
             devices = [
               "thehouse"
               "clubcyberia"
