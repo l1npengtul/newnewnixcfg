@@ -188,6 +188,7 @@
         disko-zfs.nixosModules.default
         sops-nix.nixosModules.sops
         auto-cpufreq.nixosModules.default
+        nix-flatpak.nixosModules.nix-flatpak
 
         ./services
         ./system

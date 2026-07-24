@@ -91,6 +91,15 @@ in
               "pegrose512"
             ];
           };
+          "supernote" = {
+            path = pathPrefix + "/.local/share/bottles/bottles/plugins/drive_c";
+            devices = [
+              "thehouse"
+              "clubcyberia"
+              "oldhome"
+              "pegrose512"
+            ];
+          };
         };
         gui = {
           user = username;

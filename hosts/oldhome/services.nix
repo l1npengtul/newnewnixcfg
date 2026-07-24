@@ -16,6 +16,7 @@
       systemOrHome = "home";
       username = "l1npengtul";
     };
+    flatpak.enable = true;
   };
   system.zfs-cache-limiter = {
     enable = true;

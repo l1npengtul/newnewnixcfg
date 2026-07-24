@@ -13,6 +13,7 @@
         "/var/log"
         "/var/lib/systemd/coredump"
         "/var/lib/nixos"
+        "/var/lib/flatpak"
       ];
 
       files = [
