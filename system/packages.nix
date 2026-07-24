@@ -133,6 +133,8 @@ let
   cfg = config.programs.sets;
 in
 {
+  environment.systemPackages = base;
+
   options = {
     programs.sets = {
       keyboard.enable = lib.mkEnableOption "enable keyboard management programs";
@@ -146,40 +148,41 @@ in
   };
 
   config = {
-  environment.systemPackages = base
-  ++ lib.lists.optionals cfg.keyboard.enable keyboard
-  ++ lib.lists.optionals cfg.programming.enable programming
-  ++ lib.lists.optionals cfg.diskmgmt.enable diskmgmt
-  ++ lib.lists.optionals cfg.udf.enable udf
-  ++ lib.lists.gaming cfg.gaming.enable gaming
-  ++ lib.lists.music cfg.music.enable music;
+    environment.systemPackages =
+      [ ]
+      ++ lib.lists.optionals cfg.keyboard.enable keyboard
+      ++ lib.lists.optionals cfg.programming.enable programming
+      ++ lib.lists.optionals cfg.diskmgmt.enable diskmgmt
+      ++ lib.lists.optionals cfg.udf.enable udf
+      ++ lib.lists.gaming cfg.gaming.enable gaming
+      ++ lib.lists.music cfg.music.enable music;
 
-  services.udev.packages = [] ++ lib.lists.optionals cfg.keyboard.enable keyboard;
+    services.udev.packages = [ ] ++ lib.lists.optionals cfg.keyboard.enable keyboard;
 
-  programs.git = lib.mkIf cfg.programming.enable {
-    enable = true;
-    lfs.enable = true;
-  };
+    programs.git = lib.mkIf cfg.programming.enable {
+      enable = true;
+      lfs.enable = true;
+    };
 
-  programs.appimage = lib.mkIf cfg.appimage.enable {
-        enable = true;
-        binfmt = true;
-      };
+    programs.appimage = lib.mkIf cfg.appimage.enable {
+      enable = true;
+      binfmt = true;
+    };
 
   }
-    // lib.mkIf cfg.gaming.enable {
-      programs.steam = {
-        enable = true;
-        dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
-      };
-
-      programs.nix-ld = {
-        enable = true;
-        libraries = [
-          (pkgs.runCommand "steamrun-lib" { } "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")
-        ];
-      };
-
-      hardware.steam-hardware.enable = true;
+  // lib.mkIf cfg.gaming.enable {
+    programs.steam = {
+      enable = true;
+      dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     };
+
+    programs.nix-ld = {
+      enable = true;
+      libraries = [
+        (pkgs.runCommand "steamrun-lib" { } "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")
+      ];
+    };
+
+    hardware.steam-hardware.enable = true;
+  };
 }
