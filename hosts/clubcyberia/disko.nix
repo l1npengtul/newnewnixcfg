@@ -1,13 +1,13 @@
 {
   disko.devices = {
     disk = {
-      wiltshire = {
+      cyberia = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-Micron_2450_MTFDKBA512TFK_214532CE471F";
+        device = "/dev/disk/by-id/nvme-Samsung_SSD_980_PRO_2TB_S736NL0X800114N";
         content = {
           type = "gpt";
           partitions = {
-            CHARLOTTE = {
+            lain = {
               size = "1G";
               type = "EF00";
               content = {
@@ -17,34 +17,34 @@
                 mountOptions = [ "umask=0077" ];
               };
             };
-            Q84 = {
-              size = "470G";
+            alice = {
+              size = "1860G";
               content = {
                 type = "zfs";
-                pool = "school";
+                pool = "wired";
               };
             };
           };
         };
       };
-      eyler = {
+      tachibani = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-HGST_HTS721010A9E630_JR10006P1JEV4F";
+        device = "/dev/disk/by-id/ata-ST4000NE001-2MA101_WS253ZKB";
         content = {
           type = "gpt";
           partitions = {
-            vincent = {
-              size = "895G";
-              content = {
-                type = "zfs";
-                pool = "persistpool";
-              };
-            };
-            scarlett = {
-              size = "32G";
+            eiri = {
+              size = "100G";
               content = {
                 type = "swap";
                 randomEncryption = true;
+              };
+            };
+            yasuo = {
+              size = "100%";
+              content = {
+                type = "zfs";
+                pool = "calculus";
               };
             };
           };
@@ -52,7 +52,7 @@
       };
     };
     zpool = {
-      school = {
+      wired = {
         type = "zpool";
         rootFsOptions = {
           compression = "lz4";
@@ -60,12 +60,15 @@
           relatime = "off";
           acltype = "posixacl";
           dnodesize = "auto";
-          recordsize = "128K";
+          recordsize = "1M";
           devices = "off";
           exec = "off";
           canmount = "off";
           mountpoint = "none";
           normalization = "formD";
+          encryption = "aes-256-gcm";
+          keyformat = "passphrase";
+          keylocation = "prompt";
         };
         options = {
           ashift = "13";
@@ -88,16 +91,13 @@
               exec = "off";
             };
             mountpoint = "/";
-            postCreateHook = "zfs snapshot school/forgor/root@blank";
+            postCreateHook = "zfs snapshot wired/forgor/root@blank";
           };
           "rember" = {
             type = "zfs_fs";
             options = {
               canmount = "noauto";
               mountpoint = "legacy";
-              encryption = "aes-256-gcm";
-              keyformat = "passphrase";
-              keylocation = "prompt";
             };
           };
           "rember/nix" = {
@@ -110,9 +110,39 @@
             };
             mountpoint = "/nix";
           };
+          "rember/persist/var/log" = {
+            type = "zfs_fs";
+            options = {
+              "com.sun:auto-snapshot" = "true";
+              mountpoint = "legacy";
+              exec = "off";
+              compression = "zstd";
+            };
+            mountpoint = "/var/log";
+          };
+          "rember/persist/etc/nixos" = {
+            type = "zfs_fs";
+            options = {
+              "com.sun:auto-snapshot" = "true";
+              mountpoint = "legacy";
+              exec = "off";
+              compression = "zstd";
+            };
+            mountpoint = "/etc/nixos";
+          };
+          "rember/persist" = {
+            type = "zfs_fs";
+            options = {
+              "com.sun:auto-snapshot" = "true";
+              mountpoint = "legacy";
+              exec = "off";
+              compression = "lz4";
+            };
+            mountpoint = "/persist";
+          };
         };
       };
-      persistpool = {
+      calculus = {
         type = "zpool";
         rootFsOptions = {
           compression = "zstd";
@@ -120,7 +150,7 @@
           relatime = "off";
           acltype = "posixacl";
           dnodesize = "auto";
-          recordsize = "128K";
+          recordsize = "1M";
           devices = "off";
           exec = "off";
           canmount = "off";
@@ -142,15 +172,32 @@
               keylocation = "prompt";
             };
           };
-          "rember/persist" = {
+          "rember/persist/home/l1npengtul/Downloads" = {
             type = "zfs_fs";
             options = {
               "com.sun:auto-snapshot" = "true";
               mountpoint = "legacy";
               exec = "off";
-              compression = "zstd";
             };
-            mountpoint = "/persist";
+            mountpoint = "/persist/home/l1npengtul/Downloads";
+          };
+          "rember/persist/home/l1npengtul/Videos" = {
+            type = "zfs_fs";
+            options = {
+              "com.sun:auto-snapshot" = "true";
+              mountpoint = "legacy";
+              exec = "off";
+            };
+            mountpoint = "/persist/home/l1npengtul/Videos";
+          };
+          "rember/persist/home/l1npengtul/Pictures" = {
+            type = "zfs_fs";
+            options = {
+              "com.sun:auto-snapshot" = "true";
+              mountpoint = "legacy";
+              exec = "off";
+            };
+            mountpoint = "/persist/home/l1npengtul/Pictures";
           };
         };
       };
@@ -159,27 +206,38 @@
 
   fileSystems = {
     "/" = {
-      device = "school/forgor/root";
+      device = "wired/forgor/root";
       fsType = "zfs";
     };
     "/nix" = {
-      device = "school/rember/nix";
+      device = "wired/rember/nix";
+      fsType = "zfs";
+      neededForBoot = true;
+    };
+    "/var/log" = {
+      device = "wired/rember/persist/var/log";
+      fsType = "zfs";
+    };
+    "/persist" = {
+      device = "wired/rember/persist";
       fsType = "zfs";
       neededForBoot = true;
     };
     "/etc/nixos" = {
-      device = "persistpool/rember/persist/etc/nixos";
+      device = "wired/rember/persist/etc/nixos";
       fsType = "zfs";
     };
-    "/var/log" = {
-      device = "persistpool/rember/persist/var/log";
+    "/home/l1npengtul/Downloads" = {
+      device = "calculus/rember/persist/home/l1npengtul/Downloads";
       fsType = "zfs";
-      neededForBoot = true;
     };
-    "/persist" = {
-      device = "persistpool/rember/persist";
+    "/home/l1npengtul/Videos" = {
+      device = "calculus/rember/persist/home/l1npengtul/Videos";
       fsType = "zfs";
-      neededForBoot = true;
+    };
+    "/home/l1npengtul/Pictures" = {
+      device = "calculus/rember/persist/home/l1npengtul/Pictures";
+      fsType = "zfs";
     };
   };
 }

@@ -817,10 +817,10 @@
         "nixpkgs": "nixpkgs_7"
       },
       "locked": {
-        "lastModified": 1784875466,
-        "narHash": "sha256-18xotlnTVkwT9eRkJsqBoIrNJFIeYZOkauYfxECnG+E=",
+        "lastModified": 1784882409,
+        "narHash": "sha256-tKr8COxyeMZac9DeeLFL03Knc26RqLl/bdPb45rrJZM=",
         "ref": "senpai",
-        "rev": "295d6c929c16a0142478be459375e70f2be46ba8",
+        "rev": "346d859a43351b4baa6631298f6eecda88095ae9",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@git.sr.ht/~l1npengtul/shhh"

@@ -6,24 +6,34 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./disko.nix
+    ./services.nix
   ];
 
   time.timeZone = "Asia/Tokyo";
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  swapDevices = [
-    {
-      device = "/swap/swapfile";
-      size = 48 * 1024;
-    }
-  ];
-
-  fileSystems."/home/l1npengtul/hdd_files" = {
-    options = [ "rw" ];
-  };
   networking.hostName = "clubcyberia";
-  networking.hostId = inputs.shhh.systems.clubcyberia.id;
+  networking.hostId = inputs.shhh.systems.clubcyberia.hostId;
 
-  system.stateVersion = "24.11";
+  hardware.gpu-type.enable = true;
+  hardware.gpu-type.type = "amd";
+
+  services.rember.enable = true;
+
+  programs.sets = {
+    enable = true;
+    keyboard.enable = true;
+    programming.enable = true;
+    diskmgmt.enable = true;
+    udf.enable = true;
+    appimage.enable = true;
+    gaming.enable = true;
+  };
+
+  hardware.audio-type.enable = true;
+  hardware.audio-type.type = "music";
+
+  services.kde-desktop.enable = true;
+
+  system.stateVersion = "26.05";
 }
