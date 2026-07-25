@@ -46,6 +46,12 @@ in
   };
 
   config = lib.mkIf config.services.kde-desktop.enable {
+    programs.kdeconnect.enable = true;
+  networking.firewall = rec {
+    allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+    allowedUDPPortRanges = allowedTCPPortRanges;
+  };
+
     services = {
       desktopManager.plasma6.enable = true;
 

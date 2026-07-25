@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   home.packages = with pkgs; [
-    legcord
+    pkgs-unstable.legcord
     kdePackages.konversation
     discordo
   ];

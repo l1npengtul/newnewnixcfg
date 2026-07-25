@@ -20,6 +20,6 @@
   };
   system.zfs-cache-limiter = {
     enable = true;
-    maxMemory = 4294967296;
+    maxMemory = 12884900000;
   };
 }

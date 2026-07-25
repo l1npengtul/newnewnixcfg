@@ -98,6 +98,7 @@ in
               "clubcyberia"
               "oldhome"
               "pegrose512"
+              "supernote-a5x"
             ];
           };
         };

@@ -16,8 +16,6 @@ in
   xdg.dataFile."plasma/look-and-feel/Plasma-Overdose".source =
     "${inputs.plasma-overdose}/plasma/look-and-feel/Plasma-Overdose";
 
-  home.file.".gtkrc-2.0".source = ./gtkrc-2.0;
-
   programs.plasma = {
     enable = true;
 
