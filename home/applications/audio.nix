@@ -1,8 +1,6 @@
 { pkgs, ... }:
 {
   services.flatpak.packages = [
-    "org.frescobaldi.Frescobaldi"
-    "org.musescore.MuseScore"
     "com.rosegardenmusic.rosegarden"
   ];
 

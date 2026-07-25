@@ -1,6 +1,5 @@
 { ... }: {
   imports = [
-    #./emacs
     ./audio.nix
     ./chat.nix
     ./dl.nix

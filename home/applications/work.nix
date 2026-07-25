@@ -17,6 +17,13 @@ in
     scribus
     proton-vpn
     gimp
+
+
+    libreoffice-qt
+    hunspell
+    hyphenDicts.all
+    hunspellDicts.ko-kr
+    hunspellDicts.en-gb-large
   ];
   programs.obs-studio = {
     enable = true;

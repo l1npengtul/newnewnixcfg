@@ -1,4 +1,5 @@
 {
+  disko.zfs.enable = true;
   disko.devices = {
     disk = {
       cyberia = {
@@ -135,7 +136,7 @@
             options = {
               "com.sun:auto-snapshot" = "true";
               mountpoint = "legacy";
-              exec = "off";
+              exec = "on";
               compression = "lz4";
             };
             mountpoint = "/persist";
