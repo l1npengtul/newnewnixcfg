@@ -58,7 +58,6 @@
     "jffs2"
     "hfs"
     "hfsplus"
-    "udf"
 
     "squashfs" # compressed read-only file system used for Live CDs
     "cifs" # cmb (Common Internet File System)

@@ -80,6 +80,7 @@ in
               "clubcyberia"
               "oldhome"
               "pegrose512"
+              "mouthwashing"
             ];
           };
           "plugins" = {

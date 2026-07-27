@@ -5,7 +5,6 @@
   };
 
   config = lib.mkIf config.hardware.battery-optimisations.enable {
-
     powerManagement = {
       enable = true;
       powertop.enable = true;

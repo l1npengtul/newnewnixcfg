@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     vobcopy
-    #makemkv
+    makemkv
     vlc
     ffmpeg-full
   ];

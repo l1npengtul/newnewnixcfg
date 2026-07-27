@@ -164,7 +164,7 @@ in
       lfs.enable = true;
     };
 
-    boot.initrd.kernelModules = lib.lists.optional cfg.udf.enable "udf";
+    boot.initrd.kernelModules = [] ++ lib.lists.optionals cfg.udf.enable ["udf" "sg"];
 
     programs.appimage = lib.mkIf cfg.appimage.enable {
       enable = true;
