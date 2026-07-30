@@ -48,6 +48,9 @@ let
     nixpkgs-fmt
     nixfmt
     nil
+    patchelf
+    lldb
+    lld
   ];
   diskmgmt = with pkgs; [
     util-linux
@@ -153,7 +156,8 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages = base
+    environment.systemPackages =
+      base
       ++ lib.lists.optionals cfg.keyboard.enable keyboard
       ++ lib.lists.optionals cfg.programming.enable programming
       ++ lib.lists.optionals cfg.diskmgmt.enable diskmgmt
@@ -168,7 +172,12 @@ in
       lfs.enable = true;
     };
 
-    boot.initrd.kernelModules = [] ++ lib.lists.optionals cfg.udf.enable ["udf" "sg"];
+    boot.initrd.kernelModules =
+      [ ]
+      ++ lib.lists.optionals cfg.udf.enable [
+        "udf"
+        "sg"
+      ];
 
     programs.appimage = lib.mkIf cfg.appimage.enable {
       enable = true;
@@ -180,7 +189,7 @@ in
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     };
 
-    programs.nix-ld = lib.mkIf cfg.gaming.enable  {
+    programs.nix-ld = lib.mkIf cfg.gaming.enable {
       enable = true;
       libraries = [
         (pkgs.runCommand "steamrun-lib" { } "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")

@@ -5,19 +5,20 @@
   ...
 }:
 let
-  rpgmtranslate = pkgs.callPackage  ./rpgmtranslate/rpgmtranslate.nix { };
+  rpgm-archive-decrypter = pkgs.callPackage ./rpgm/rpgm-archive-decrypter.nix { };
+  rvpacker-txt-rs = pkgs.callPackage ./rvpacker/rvpacker-txt-rs.nix { };
 in
 {
   home.packages = with pkgs; [
     blender
     darktable
     krita
-    rpgmtranslate
+    rpgm-archive-decrypter
+    rvpacker-txt-rs
     inkscape
     scribus
     proton-vpn
     gimp
-
 
     libreoffice-qt
     hunspell

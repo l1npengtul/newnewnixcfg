@@ -1,4 +1,13 @@
 { pkgs, ... }:
+let
+  create-rust-devshell = pkgs.writeShellScriptBin "create-rust-devshell" ''
+    set -euxo pipefail
+
+    wget https://gist.githubusercontent.com/l1npengtul/b686a79d81c5c14b9c3b988bc987c399/raw/6e4a961644d8fee049a821eecf0eb003f7dc72e2/flake.nix
+    git add flake.nix
+    echo "use flake" > .envrc
+  '';
+in
 {
   home.packages = with pkgs; [
     ghidra-bin
@@ -17,6 +26,8 @@
     lua
     luarocks
     luaformatter
+
+    create-rust-devshell
   ];
 
   programs.direnv = {
