@@ -26,6 +26,7 @@
 
 postPatch = ''
     ln -s ${./Cargo.lock} Cargo.lock
+    ln -s ${./package-lock.json} package-lock.json
   '';
 
 
