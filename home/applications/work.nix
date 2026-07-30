@@ -5,7 +5,7 @@
   ...
 }:
 let
-  rpgmtranslate = import ./rpgmtranslate.nix { inherit pkgs lib; };
+  rpgmtranslate = pkgs.callPackage  ./rpgmtranslate/rpgmtranslate.nix { };
 in
 {
   home.packages = with pkgs; [

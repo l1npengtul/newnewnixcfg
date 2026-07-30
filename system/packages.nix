@@ -31,6 +31,7 @@ let
     ripgrep-all
     unzip
     pciutils
+    mosh
   ];
   keyboard = with pkgs; [
     via
@@ -39,13 +40,13 @@ let
     ungoogled-chromium
   ];
   programming = with pkgs; [
-    python3
-    temurin-bin
-    jdk8
     distrobox
     android-tools
-    mosh
     gram.remote_server
+    nix-prefetch-github
+    nixpkgs-fmt
+    nix-fmt
+    nil
   ];
   diskmgmt = with pkgs; [
     util-linux
@@ -56,13 +57,15 @@ let
     zfstools
     ntfs3g
     woeusb-ng
+    unetbootin
+    e2fsprogs
   ];
   udf = with pkgs; [ udftools ];
   gaming = with pkgs; [
     r2modman
     heroic
   ];
-  music = with pkgs; [
+  music = with pkgs-unstable; [
     odin2
     surge-xt
     lsp-plugins
