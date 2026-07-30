@@ -46,7 +46,7 @@ let
     gram.remote_server
     nix-prefetch-github
     nixpkgs-fmt
-    nix-fmt
+    nixfmt
     nil
   ];
   diskmgmt = with pkgs; [
