@@ -40,8 +40,10 @@ postPatch = ''
       desktopName = "RPGMTranslate";
       comment = "RPG Maker Translation Tools";
       exec = "rpgmtranslate";
+      icon = "rpgmtranslate";
       categories = [
-        "Multimedia"
+        "Development"
+        "Game"
       ];
     })
   ];
@@ -66,6 +68,11 @@ postPatch = ''
     openssl
     webkitgtk_4_1
   ];
+
+  postInstall = ''
+    mkdir -p $out/share/icons/hicolor/256x256/apps
+    install -Dm444 $src/src/assets/icon.png $out/share/icons/hicolor/256x256/apps/rpgmtranslate.png
+  '';
 
   cargoRoot = "src-tauri";
 })
