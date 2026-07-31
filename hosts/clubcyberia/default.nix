@@ -28,6 +28,7 @@
     udf.enable = true;
     appimage.enable = true;
     gaming.enable = true;
+    music.enable = true;
   };
 
   hardware.audio-type.enable = true;
