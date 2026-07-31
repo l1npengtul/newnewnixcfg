@@ -7,6 +7,7 @@
 let
   rpgm-archive-decrypter = pkgs.callPackage ./rpgm/rpgm-archive-decrypter.nix { };
   rvpacker-txt-rs = pkgs.callPackage ./rvpacker/rvpacker-txt-rs.nix { };
+  trenchbroom = pkgs.callPackage ./trenchbroom/package.nix { };
 in
 {
   home.packages = with pkgs; [
@@ -19,6 +20,7 @@ in
     scribus
     proton-vpn
     gimp
+    trenchbroom
 
     libreoffice-qt
     hunspell
@@ -59,10 +61,6 @@ in
       "privacy.donottrackheader.enabled" = true;
     };
   };
-
-  services.flatpak.packages = [
-    "com.kristianduske.TrenchBroom"
-  ];
 
   services.protonmail-bridge.enable = true;
 
