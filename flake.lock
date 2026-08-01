@@ -652,10 +652,10 @@
     "randomshit": {
       "flake": false,
       "locked": {
-        "lastModified": 1770810784,
-        "narHash": "sha256-DtM1Pzik4GjA1rkijhI0L0HuS7k04pkOV2LFHGTnmOE=",
+        "lastModified": 1785571873,
+        "narHash": "sha256-kJj8ubLdV7JGonqdgMxhsRms4H9pPWk6AWBjj9tNRm8=",
         "ref": "senpai",
-        "rev": "ddb6111bc013efd7e92dffbe9ca58984380b464b",
+        "rev": "24166ac21506c83c440ed0bdc363ac7a083da109",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@git.sr.ht/~l1npengtul/randomshit"

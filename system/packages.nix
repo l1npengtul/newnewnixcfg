@@ -7,10 +7,13 @@
   ...
 }:
 let
-  paulxstretch = pkgs.callPackage ./vsts/paulxstretch.nix { };
-  ripplerx = pkgs.callPackage ./vsts/ripplerx.nix { };
-  neuralnote = pkgs.callPackage ./vsts/neuralnote.nix { };
-  sfzq = pkgs.callPackage ./vsts/sfzq { };
+  paulxstretch = pkgs-unstable.callPackage ./vsts/paulxstretch.nix { };
+  ripplerx = pkgs-unstable.callPackage ./vsts/ripplerx.nix { };
+  neuralnote = pkgs-unstable.callPackage ./vsts/neuralnote.nix { };
+  sfzq = pkgs-unstable.callPackage ./vsts/sfzq { };
+  pianoteq = pkgs-unstable.callPackage ./vsts/pianoteq.nix { };
+
+  randomshit = builtins.toString inputs.randomshit;
 
   base = with pkgs; [
     # nix utilities
@@ -138,6 +141,10 @@ let
     ripplerx
     inputs.audio.packages.${pkgs.stdenv.hostPlatform.system}.atlas2
     neuralnote
+
+    (pianoteq.overrideAttrs {
+      src = "${inputs.randomshit}/pianoteq_setup_v921.tar.xz";
+    })
   ];
   cfg = config.programs.sets;
 in
