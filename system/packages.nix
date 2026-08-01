@@ -13,8 +13,6 @@ let
   sfzq = pkgs-unstable.callPackage ./vsts/sfzq { };
   pianoteq = pkgs-unstable.callPackage ./vsts/pianoteq.nix { };
 
-  randomshit = builtins.toString inputs.randomshit;
-
   base = with pkgs; [
     # nix utilities
     nixfmt-tree

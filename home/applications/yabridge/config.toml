@@ -1,0 +1,13 @@
+plugin_dirs = [
+    '/home/l1npengtul/.wine/drive_c/Program Files/Common Files/VST3/'
+    '/home/l1npengtul/.wine/drive_c/Program Files/Common Files/CLAP/'
+    '/home/l1npengtul/.wine/drive_c/Program Files/Common Files/VST2/'
+    '/home/l1npengtul/.wine/drive_c/Program Files/VstPlugins/'
+    '/home/l1npengtul/.wine/drive_c/Program Files/Steinberg/VstPlugins/'
+    '/home/l1npengtul/.wine/drive_c/Program Files (x86)/Common Files/VST3/'
+    '/home/l1npengtul/.wine/drive_c/Program Files (x86)/Common Files/VST2/'
+    '/home/l1npengtul/.wine/drive_c/Program Files (x86)/Steinberg/VSTplugins/'
+]
+vst2_location = 'centralized'
+no_verify = false
+blacklist = []

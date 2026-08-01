@@ -5,5 +5,6 @@
     makemkv
     vlc
     ffmpeg-full
+    mkvtoolnix
   ];
 }
