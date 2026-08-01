@@ -173,14 +173,14 @@
               keylocation = "prompt";
             };
           };
-          "rember/persist/home/l1npengtul/Downloads" = {
+          "rember/persist/home/l1npengtul/.wine" = {
             type = "zfs_fs";
             options = {
               "com.sun:auto-snapshot" = "true";
               mountpoint = "legacy";
               exec = "off";
             };
-            mountpoint = "/persist/home/l1npengtul/Downloads";
+            mountpoint = "/persist/home/l1npengtul/.wine";
           };
           "rember/persist/home/l1npengtul/Videos" = {
             type = "zfs_fs";
@@ -228,8 +228,8 @@
       device = "wired/rember/persist/etc/nixos";
       fsType = "zfs";
     };
-    "/home/l1npengtul/Downloads" = {
-      device = "calculus/rember/persist/home/l1npengtul/Downloads";
+    "/home/l1npengtul/.wine" = {
+      device = "calculus/rember/persist/home/l1npengtul/.wine";
       fsType = "zfs";
     };
     "/home/l1npengtul/Videos" = {

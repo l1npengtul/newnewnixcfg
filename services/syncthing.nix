@@ -83,8 +83,8 @@ in
               "mouthwashing"
             ];
           };
-          "plugins" = {
-            path = pathPrefix + "/.local/share/bottles/bottles/plugins/drive_c";
+          ".wine" = {
+            path = pathPrefix + "/.wine";
             devices = [
               "thehouse"
               "clubcyberia"

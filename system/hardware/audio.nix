@@ -18,40 +18,26 @@ in
     };
   };
 
-  config =
-    lib.mkIf (cfg == "standard" && cfg.enable) {
-      services = {
-        pulseaudio.enable = false;
-        pipewire = {
-          enable = true;
-          alsa.enable = true;
-          alsa.support32Bit = true;
-          jack.enable = true;
-          pulse.enable = true;
-          socketActivation = true;
-        };
-      };
-    }
-    // lib.mkIf (cfg == "music" && cfg.enable) {
-      services = {
-        pulseaudio.enable = false;
-        pipewire = {
-          enable = true;
-          alsa.enable = true;
-          alsa.support32Bit = true;
-          jack.enable = true;
-          pulse.enable = true;
-          socketActivation = true;
-        };
-      };
-
-      musnix = {
+  config = lib.mkIf cfg.enable {
+    services = {
+      pulseaudio.enable = false;
+      pipewire = {
         enable = true;
-        rtcqs.enable = true;
-        kernel.realtime = true;
-        rtirq.enable = true;
-        das_watchdog.enable = true;
+        alsa.enable = true;
+        alsa.support32Bit = true;
+        jack.enable = true;
+        pulse.enable = true;
+        socketActivation = true;
       };
-      security.rtkit.enable = true;
     };
+
+    musnix = lib.mkIf (cfg.type == "music ") {
+      enable = true;
+      rtcqs.enable = true;
+      kernel.realtime = true;
+      rtirq.enable = true;
+      das_watchdog.enable = true;
+    };
+    security.rtkit = lib.mkIf (cfg.type == "music ") { enable = true; };
+  };
 }

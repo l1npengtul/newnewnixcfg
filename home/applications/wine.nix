@@ -4,10 +4,5 @@
     protontricks
     winetricks
     wineasio
-    protonup-qt
-    protonup-rs
-    protonup-ng
-    protonplus
-    bottles
   ];
 }

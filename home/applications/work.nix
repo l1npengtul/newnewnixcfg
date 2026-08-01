@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-unstable,
   lib,
   config,
   ...
@@ -7,7 +8,7 @@
 let
   rpgm-archive-decrypter = pkgs.callPackage ./rpgm/rpgm-archive-decrypter.nix { };
   rvpacker-txt-rs = pkgs.callPackage ./rvpacker/rvpacker-txt-rs.nix { };
-  trenchbroom = pkgs.callPackage ./trenchbroom/package.nix { };
+  trenchbroom = pkgs-unstable.callPackage ./trenchbroom/package.nix { };
 in
 {
   home.packages = with pkgs; [

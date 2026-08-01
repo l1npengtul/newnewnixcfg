@@ -90,7 +90,7 @@ let
     distrho-ports
     yabridgectl
     yabridge
-    wineWow64Packages.stagingFull
+    wineWow64Packages.yabridge
     dxvk_2
     plugdata
     carla
