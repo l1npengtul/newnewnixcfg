@@ -4,7 +4,7 @@
     "com.rosegardenmusic.rosegarden"
   ];
 
-  xdg.configFile."yabridgectl/config.toml".source = ./yabridge/config.toml;
+  #xdg.configFile."yabridgectl/config.toml".source = ./yabridge/config.toml;
 
   home.packages = with pkgs; [
     audacity
