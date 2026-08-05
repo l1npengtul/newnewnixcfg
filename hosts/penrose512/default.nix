@@ -5,7 +5,7 @@
 }:
 {
   imports = [
-    #./hardware-configuration.nix
+    ./hardware-configuration.nix
     ./disko.nix
     ./services.nix
   ];
