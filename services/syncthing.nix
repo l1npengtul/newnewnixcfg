@@ -61,7 +61,7 @@ in
               "thehouse"
               "clubcyberia"
               "oldhome"
-              "pegrose512"
+              "penrose512"
             ];
           };
           "Pictures" = {
@@ -70,7 +70,7 @@ in
               "thehouse"
               "clubcyberia"
               "oldhome"
-              "pegrose512"
+              "penrose512"
             ];
           };
           "Music" = {
@@ -79,7 +79,7 @@ in
               "thehouse"
               "clubcyberia"
               "oldhome"
-              "pegrose512"
+              "penrose512"
               "mouthwashing"
             ];
           };
@@ -89,7 +89,7 @@ in
               "thehouse"
               "clubcyberia"
               "oldhome"
-              "pegrose512"
+              "penrose512"
             ];
           };
           "supernote" = {
@@ -98,7 +98,7 @@ in
               "thehouse"
               "clubcyberia"
               "oldhome"
-              "pegrose512"
+              "penrose512"
               "supernote-a5x"
             ];
           };

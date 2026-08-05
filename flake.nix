@@ -215,18 +215,19 @@
           ++ commonModules
           ++ hm-module;
         };
-        pegrose512 = lib.nixosSystem {
+        penrose512 = lib.nixosSystem {
           inherit system pkgs;
           specialArgs = {
             inherit inputs pkgs-unstable;
           };
 
           modules = [
-            nixos-hardware.nixosModules.common-gpu-intel
-            nixos-hardware.nixosModules.common-cpu-intel
+            nixos-hardware.nixosModules.common-gpu-amd
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-pc-ssd
             nixos-hardware.nixosModules.common-hidpi
 
-            ./hosts/pegrose512
+            ./hosts/penrose512
           ]
           ++ commonModules
           ++ hm-module;
