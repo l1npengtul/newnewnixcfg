@@ -2,6 +2,7 @@
   inputs,
   config,
   lib,
+  pkgs-unstable,
   ...
 }:
 let
@@ -47,6 +48,7 @@ in
       cert = config.sops.secrets."syncthing-cert".path;
       guiAddress = "127.0.0.1:8384";
       guiPasswordFile = config.sops.secrets."syncthing/password".path;
+      package = pkgs-unstable.syncthing;
 
       user = cfg.username;
 
