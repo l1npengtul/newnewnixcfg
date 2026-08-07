@@ -16,6 +16,10 @@
       systemOrHome = "home";
       username = "l1npengtul";
     };
+    supernote-watcher = {
+      enable = true;
+      user = "l1npengtul";
+    };
     flatpak.enable = true;
   };
   system.zfs-cache-limiter = {
