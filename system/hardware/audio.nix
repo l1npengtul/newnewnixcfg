@@ -31,7 +31,7 @@ in
       };
     };
 
-    musnix = lib.mkIf (cfg.type == "music ") {
+    musnix = lib.mkIf (cfg.type == "music") {
       enable = true;
       rtcqs.enable = true;
       kernel = {
@@ -41,6 +41,6 @@ in
       rtirq.enable = true;
       das_watchdog.enable = true;
     };
-    security.rtkit = lib.mkIf (cfg.type == "music ") { enable = true; };
+    security.rtkit = lib.mkIf (cfg.type == "music") { enable = true; };
   };
 }
