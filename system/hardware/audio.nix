@@ -34,7 +34,10 @@ in
     musnix = lib.mkIf (cfg.type == "music ") {
       enable = true;
       rtcqs.enable = true;
-      kernel.realtime = true;
+      kernel = {
+        realtime = true;
+        packages = config.boot.kernelPackages;
+      };
       rtirq.enable = true;
       das_watchdog.enable = true;
     };
