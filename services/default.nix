@@ -2,7 +2,7 @@
   imports = [
     ./syncthing.nix
     ./tailscale.nix
-    ./supernote.nix
+    #./supernote.nix
 
     ./madamoiselle
     ./atticd.nix
