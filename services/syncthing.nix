@@ -104,6 +104,16 @@ in
               "supernote-a5x"
             ];
           };
+          "ebooks" = {
+            path = pathPrefix + "/ebooks";
+            devices = [
+              "thehouse"
+              "clubcyberia"
+              "oldhome"
+              "penrose512"
+              "supernote-a5x"
+            ];
+          };
         };
         gui = {
           user = username;
