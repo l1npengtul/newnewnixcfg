@@ -1,7 +1,8 @@
 {
+  lib,
   pkgs,
   ...
 }:
 {
-  boot.kernelPackages = pkgs.linuxPackages;
+  boot.kernelPackages = lib.mkDefault pkgs.linuxPackages;
 }

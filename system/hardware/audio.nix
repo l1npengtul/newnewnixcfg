@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   cfg = config.hardware.audio-type;
 in
@@ -34,9 +39,10 @@ in
     musnix = lib.mkIf (cfg.type == "music") {
       enable = true;
       rtcqs.enable = true;
+      alsaSeq.enable = true;
       kernel = {
         realtime = true;
-        packages = config.boot.kernelPackages;
+        packages = pkgs.linuxPackages;
       };
       rtirq.enable = true;
       das_watchdog.enable = true;
