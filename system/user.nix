@@ -30,6 +30,7 @@ in
       "cdrom"
       "gamemode"
       "optical"
+      "realtime"
     ];
   };
   programs.fish.enable = true;
