@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }:
 let
@@ -40,12 +39,7 @@ in
       enable = true;
       rtcqs.enable = true;
       alsaSeq.enable = true;
-      kernel = {
-        realtime = true;
-        packages = pkgs.linuxPackages;
-      };
       rtirq.enable = true;
-      das_watchdog.enable = true;
     };
     services.udev = lib.mkIf (cfg.type == "music") {
       extraRules = ''

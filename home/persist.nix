@@ -2,6 +2,7 @@
   home.persistence."/persist" = {
     directories = [
       "everything"
+      "ebooks"
       "Music"
       "Pictures"
       "Documents"

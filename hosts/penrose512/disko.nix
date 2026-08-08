@@ -167,6 +167,7 @@
     "/var/log" = {
       device = "sierpinski-s23/rember/persist/var/log";
       fsType = "zfs";
+      neededForBoot = true;
     };
     "/persist" = {
       device = "sierpinski-s23/rember/persist";

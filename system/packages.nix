@@ -44,6 +44,7 @@ let
   programming = with pkgs; [
     distrobox
     android-tools
+    universal-android-debloater
     gram.remote_server
     nix-prefetch-github
     nixpkgs-fmt
@@ -71,6 +72,12 @@ let
     heroic
   ];
   music = with pkgs-unstable; [
+    bitwig-studio6
+    bottles
+    yabridgectl
+    yabridge
+    wineWow64Packages.yabridge
+
     odin2
     surge-xt
     lsp-plugins
@@ -89,15 +96,12 @@ let
     alsa-utils
     vital
     distrho-ports
-    yabridgectl
-    yabridge
-    wineWow64Packages.yabridge
     dxvk_2
     plugdata
     carla
-    reaper
-    reaper-sws-extension
-    reaper-reapack-extension
+    #reaper
+    #reaper-sws-extension
+    #reaper-reapack-extension
 
     airwindows
     airwin2rack
