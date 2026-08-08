@@ -18,6 +18,14 @@
   hardware.gpu-type.enable = true;
   hardware.gpu-type.type = "amd";
 
+  boot.kernelParams = [
+    "amd_pstate=guided"
+  ];
+  boot.kernelModules = [
+    "amd_pstate"
+    "amd_pstate_ut"
+  ];
+
   services.rember.enable = true;
 
   programs.sets = {

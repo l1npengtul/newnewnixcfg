@@ -85,15 +85,6 @@ in
               "mouthwashing"
             ];
           };
-          ".wine" = {
-            path = pathPrefix + "/.wine";
-            devices = [
-              "thehouse"
-              "clubcyberia"
-              "oldhome"
-              "penrose512"
-            ];
-          };
           "supernote" = {
             path = pathPrefix + "/supernote";
             devices = [
