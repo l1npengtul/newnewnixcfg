@@ -75,6 +75,25 @@ in
 
     programs.xwayland.enable = true;
 
+    i18n.defaultLocale = "en_GB.UTF-8";
+    i18n.extraLocales = [
+      "ko_KR.UTF-8/UTF-8"
+      "ja_JP.UTF-8/UTF-8"
+    ];
+    i18n.extraLocaleSettings = {
+      LC_CTYPE = "en_GB.UTF-8";
+      LC_ADDRESS = "ja_JP.UTF-8";
+      LC_IDENTIFICATION = "ja_JP.UTF-8";
+      LC_MEASUREMENT = "ja_JP.UTF-8";
+      LC_MESSAGES = "ja_JP.UTF-8";
+      LC_MONETARY = "ja_JP.UTF-8";
+      LC_NAME = "ko_KR.UTF-8";
+      LC_NUMERIC = "ko_KR.UTF-8";
+      LC_PAPER = "ko_KR.UTF-8";
+      LC_TELEPHONE = "ko_KR.UTF-8";
+      LC_TIME = "ja_JP.UTF-8";
+    };
+
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";
@@ -103,11 +122,21 @@ in
           globalOptions = {
             Hotkey = {
               EnumerateWithTriggerKeys = true;
+              ActivateKeys = "";
+              DeactivateKeys = "";
+              AltTriggerKeys = "";
+              EnumerateBackwardKeys = "";
               EnumerateSkipFirst = false;
+              EnumerateGroupForwardKeys = "";
+              EnumerateGroupBackwardKeys = "";
               ModifierOnlyKeyTimeout = 250;
             };
-            "Hotkey/EnumerateForwardKeys" = {
+
+            "Hotkey/TriggerKeys" = {
               "0" = "Hangul";
+            };
+            "Hotkey/EnumerateForwardKeys" = {
+              "0" = "Hiragana_Katakana";
             };
             "Hotkey/PrevPage" = {
               "0" = "Up";
@@ -124,13 +153,24 @@ in
             "Hotkey/TogglePreedit" = {
               "0" = "Control+Alt+P";
             };
+
             Behavior = {
               ActiveByDefault = false;
+              resetStateWhenFocusIn = "No";
+              ShareInputState = "No";
               PreeditEnabledByDefault = true;
               ShowInputMethodInformation = true;
-              ShowInputMethodInformationWhenFocusIn = false;
+              showInputMethodInformationWhenFocusIn = false;
               CompactInputMethodInformation = true;
               ShowFirstInputMethodInformation = true;
+              DefaultPageSize = 5;
+              OverrideXkbOption = false;
+              CustomXkbOption = "";
+              EnabledAddons = "";
+              DisabledAddons = "";
+              PreloadInputMethod = true;
+              AllowInputMethodForPassword = false;
+              ShowPreeditForPassword = false;
             };
           };
         };
