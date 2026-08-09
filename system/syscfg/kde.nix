@@ -47,10 +47,15 @@ in
 
   config = lib.mkIf config.services.kde-desktop.enable {
     programs.kdeconnect.enable = true;
-  networking.firewall = rec {
-    allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-    allowedUDPPortRanges = allowedTCPPortRanges;
-  };
+    networking.firewall = rec {
+      allowedTCPPortRanges = [
+        {
+          from = 1714;
+          to = 1764;
+        }
+      ];
+      allowedUDPPortRanges = allowedTCPPortRanges;
+    };
 
     services = {
       desktopManager.plasma6.enable = true;
@@ -103,12 +108,6 @@ in
             };
             "Hotkey/EnumerateForwardKeys" = {
               "0" = "Hangul";
-            };
-            "Hotkey/EnumerateGroupForwardKeys" = {
-              "0" = "Super+space";
-            };
-            "Hotkey/EnumerateGroupBackwardKeys" = {
-              "0" = "Shift+Super+space";
             };
             "Hotkey/PrevPage" = {
               "0" = "Up";

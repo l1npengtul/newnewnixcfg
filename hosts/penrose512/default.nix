@@ -25,7 +25,6 @@
     "amd_pstate"
     "amd_pstate_ut"
   ];
-
   services.rember.enable = true;
 
   programs.sets = {

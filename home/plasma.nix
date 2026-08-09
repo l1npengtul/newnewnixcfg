@@ -101,7 +101,7 @@ in
       kdeglobals.General.menuFont = "rainyhearts,12,-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Medium";
       kdeglobals.General.smallestReadableFont = "rainyhearts,10,-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Medium";
       kdeglobals.General.toolBarFont = "rainyhearts,12,-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Medium";
-      #       kdeglobals.Icons.Theme = "Memphis98";
+      kdeglobals.Icons.Theme = "Chicago95";
       kdeglobals.KDE.AnimationDurationFactor = 0.125;
       kdeglobals.KDE.widgetStyle = "Windows";
       kwinrc.Wayland."InputMethod[$e]" =
@@ -115,8 +115,13 @@ in
         # Forces kde to not change this value (even through the settings app).
         immutable = true;
       };
+      kwinrc."org.kde.kdecoration2".theme = "__aurorae__svg__Plasma-Overdose_x1.5";
       spectaclerc.ImageSave.translatedScreenshotsFolder = "Screenshots";
       spectaclerc.VideoSave.translatedScreencastsFolder = "Screencasts";
+      yakuakerc.Dialogs.FirstRun = false;
+      plasma-localerc.Formats.LANG = "en_US.UTF-8";
+      plasmanotifyrc."Applications/com.usebottles.bottles".Seen = true;
+      plasmanotifyrc."Applications/firefox-devedition".Seen = true;
     };
   };
 
