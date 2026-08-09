@@ -149,6 +149,7 @@ in
       kdeglobals.Icons.Theme = "Chicago95";
       kdeglobals.KDE.AnimationDurationFactor = 0.125;
       kdeglobals.KDE.widgetStyle = "Windows";
+      ksmserverrc.General.loginMode = "emptySession";
       kwinrc.Wayland."InputMethod[$e]" =
         "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
       kwinrc.Wayland."InputMethod\x5b$e\x5d" =
