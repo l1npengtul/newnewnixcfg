@@ -1,6 +1,51 @@
 { inputs, pkgs, ... }:
 let
   randomshit = builtins.toString inputs.randomshit;
+
+  mkDict =
+    {
+      pname,
+      readmeFile,
+      dictFileName,
+      ...
+    }@args:
+    pkgs.stdenv.mkDerivation (
+      {
+        inherit pname;
+        installPhase = ''
+          runHook preInstall
+          # hunspell dicts
+          install -dm755 "$out/share/hunspell"
+          install -m644 ${dictFileName}.dic "$out/share/hunspell/"
+          install -m644 ${dictFileName}.aff "$out/share/hunspell/"
+          # myspell dicts symlinks
+          install -dm755 "$out/share/myspell/dicts"
+          ln -sv "$out/share/hunspell/${dictFileName}.dic" "$out/share/myspell/dicts/"
+          ln -sv "$out/share/hunspell/${dictFileName}.aff" "$out/share/myspell/dicts/"
+          # docs
+          install -dm755 "$out/share/doc"
+          install -m644 ${readmeFile} $out/share/doc/${pname}.txt
+          runHook postInstall
+        '';
+      }
+      // args
+    );
+
+  dict-ja-jp = mkDict {
+    pname = "hunspell-dict-ja-jp";
+    version = "0-unstable-2026-08-09";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "MrCorn0-0";
+      repo = "hunspell_ja_JP";
+      rev = "80fc8a8ae1ad6aa286be8fe3e36b3c21964f8d22";
+      hash = "sha256-mhOktnACVwmaPhTd/rz3Ng8E41ufWZmV6T8s8NKY/xY=";
+    };
+
+    readmeFile = "README.md";
+
+    dictFileName = "ja_JP";
+  };
 in
 {
   xdg.dataFile."icons/Chicago95".source = "${inputs.chicago95}/Icons/Chicago95";
@@ -147,6 +192,11 @@ in
     wl-clipboard
 
     plasma-overdose-kde-theme
+
+    hunspell
+    hunspellDicts.en-gb-large
+    hunspellDicts.ko_KR
+    dict-ja-jp
   ];
 
   services.kdeconnect = {

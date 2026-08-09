@@ -2,20 +2,17 @@
   lib,
   pkgs,
   config,
-  formats,
   ...
 }:
 let
-  user-cfg = (formats.ini { }).generate "theme.conf.user" null;
-
   reactionary = pkgs.stdenvNoCC.mkDerivation {
-    pname = "sddm-reactionary";
-    version = "unstable-2024-02-08";
+    pname = "reactionary";
+    version = "unstable-2026-03-17";
 
     src = pkgs.fetchgit {
       url = "https://www.opencode.net/phob1an/reactionary.git";
-      rev = "4aa2d20f0e93ae4387a90947fcc6c90940c18122";
-      hash = "sha256-obKYi85SEMSvoF9KY8TbU02mag57yr/03TvNNNa67N0=";
+      rev = "d02946110b87c9c61607ff4913dcbf9d070f6b6a";
+      hash = "sha256-u74Mpdj57Ze5uz8vcLOcdvhMEzDfbnjqBJ8qD2/156s=";
     };
 
     dontWrapQtApps = true;
@@ -25,11 +22,7 @@ let
 
       mkdir -p "$out/share/sddm/themes"
       cp -r sddm/themes/reactionary "$out/share/sddm/themes/reactionary"
-    ''
-    + (lib.optionalString (lib.isAttrs null) ''
-      ln -sf ${user-cfg} $out/share/sddm/themes/reactionary/theme.conf.user
-    '')
-    + ''
+
       runHook postInstall
     '';
     meta = {
@@ -77,20 +70,20 @@ in
 
     i18n.defaultLocale = "en_GB.UTF-8";
     i18n.extraLocales = [
-      "ko_KR.UTF-8/UTF-8"
       "ja_JP.UTF-8/UTF-8"
+      "ko_KR.UTF-8/UTF-8"
     ];
     i18n.extraLocaleSettings = {
-      LC_CTYPE = "en_GB.UTF-8";
+      LC_CTYPE = "ja_JP.UTF-8";
       LC_ADDRESS = "ja_JP.UTF-8";
       LC_IDENTIFICATION = "ja_JP.UTF-8";
       LC_MEASUREMENT = "ja_JP.UTF-8";
       LC_MESSAGES = "ja_JP.UTF-8";
       LC_MONETARY = "ja_JP.UTF-8";
-      LC_NAME = "ko_KR.UTF-8";
-      LC_NUMERIC = "ko_KR.UTF-8";
-      LC_PAPER = "ko_KR.UTF-8";
-      LC_TELEPHONE = "ko_KR.UTF-8";
+      LC_NAME = "ja_JP.UTF-8";
+      LC_NUMERIC = "ja_JP.UTF-8";
+      LC_PAPER = "ja_JP.UTF-8";
+      LC_TELEPHONE = "ja_JP.UTF-8";
       LC_TIME = "ja_JP.UTF-8";
     };
 
