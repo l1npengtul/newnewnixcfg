@@ -135,10 +135,10 @@ in
       kcminputrc."ButtonRebinds/Tablet/HUION Huion Tablet_GS1331"."7" = "Key,]";
       kcminputrc."Libinput/9580/109/HUION Huion Tablet_GS1331 Dial".Enabled = false;
       kcminputrc."Libinput/9580/109/HUION Huion Tablet_GS1331 Stylus".MapToWorkspace = false;
-      #       kcminputrc.Mouse.cursorTheme = "kasane-teto-cursors";
       "kxkbrc"."Layout"."Options" = "korean:ralt_hangul,korean:rctrl_hanja,caps:backspace";
       kded5rc.Module-browserintegrationreminder.autoload = false;
       kded5rc.Module-device_automounter.autoload = false;
+
       kdeglobals.General.XftHintStyle = "hintslight";
       kdeglobals.General.XftSubPixel = "none";
       kdeglobals.General.fixed = "ComicShannsMono Nerd Font,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1";
@@ -148,8 +148,31 @@ in
       kdeglobals.General.toolBarFont = "rainyhearts,12,-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Medium";
       kdeglobals.Icons.Theme = "Chicago95";
       kdeglobals.KDE.AnimationDurationFactor = 0.125;
+      kdeglobals.KDE.contrast = 2;
+      kdeglobals.KDE.frameContrast = 0.2;
       kdeglobals.KDE.widgetStyle = "Windows";
+      kdeglobals."KFileDialog Settings"."Allow Expansion" = false;
+      kdeglobals."KFileDialog Settings"."Automatically select filename extension" = true;
+      kdeglobals."KFileDialog Settings"."Breadcrumb Navigation" = true;
+      kdeglobals."KFileDialog Settings"."Decoration position" = 2;
+      kdeglobals."KFileDialog Settings"."Show Full Path" = false;
+      kdeglobals."KFileDialog Settings"."Show Inline Previews" = true;
+      kdeglobals."KFileDialog Settings"."Show Preview" = false;
+      kdeglobals."KFileDialog Settings"."Show Speedbar" = true;
+      kdeglobals."KFileDialog Settings"."Show hidden files" = false;
+      kdeglobals."KFileDialog Settings"."Sort by" = "Name";
+      kdeglobals."KFileDialog Settings"."Sort directories first" = true;
+      kdeglobals."KFileDialog Settings"."Sort hidden files last" = false;
+      kdeglobals."KFileDialog Settings"."Sort reversed" = false;
+      kdeglobals."KFileDialog Settings"."Speedbar Width" = 140;
+      kdeglobals."KFileDialog Settings"."View Style" = "DetailTree";
+
+      kdeglobals.Sounds.Theme = "PlasmaOverdose";
       ksmserverrc.General.loginMode = "emptySession";
+      klipperrc.General.IgnoreImages = false;
+      klipperrc.General.KeepClipboardContents = false;
+      ksplashrc.KSplash.Engine = "KSplashQML";
+      ksplashrc.KSplash.Theme = "PlasmaOverdose";
       kwinrc.Wayland."InputMethod[$e]" =
         "/run/current-system/sw/share/applications/fcitx5-wayland-launcher.desktop";
       kwinrc.Wayland."InputMethod\x5b$e\x5d" =

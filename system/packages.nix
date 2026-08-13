@@ -73,6 +73,7 @@ let
   ];
   music = with pkgs-unstable; [
     bitwig-studio6
+    reaper
     bottles
     yabridgectl
     yabridge
