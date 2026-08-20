@@ -76,6 +76,11 @@
     reapkgs-known.url = "github:silvarc141/reapkgs-known/27487c09915f77cb8742936a1974897029055fee";
     reapkgs-extras.url = "github:l1npengtul/reapkgs-extras/8f709e959a7ed37e884067bc6fd4d3e423582fb4";
 
+    yasl = {
+      url = "github:l1npengtul/yasl";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Nixpkgs patches
     # github:NixOS/nixpkgs?ref=pull/{PR NUMBER}/head
 
@@ -120,6 +125,7 @@
       nix-index-database,
       nix-minecraft,
       nixos-needsreboot,
+      yasl,
       disko,
       disko-zfs,
       sops-nix,
@@ -189,6 +195,7 @@
         sops-nix.nixosModules.sops
         auto-cpufreq.nixosModules.default
         nix-flatpak.nixosModules.nix-flatpak
+        yasl.nixosModules.default
 
         ./services
         ./system

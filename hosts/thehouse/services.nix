@@ -21,6 +21,7 @@
     audit-auditd.enable = true;
     headless.enable = true;
     local-serial.enable = true;
+    yasl-bot.enable = true;
   };
   system.zfs-cache-limiter = {
     enable = true;

@@ -13,5 +13,6 @@
     ./antivirus.nix
     ./syncthing.nix
     ./tailscale.nix
+    ./yasl.nix
   ];
 }
