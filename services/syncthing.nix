@@ -103,6 +103,7 @@ in
               "oldhome"
               "penrose512"
               "supernote-a5x"
+              "inkpalmpower"
             ];
           };
         };

@@ -53,6 +53,7 @@ let
     patchelf
     lldb
     lld
+    rkdeveloptool
   ];
   diskmgmt = with pkgs; [
     util-linux
@@ -100,9 +101,6 @@ let
     dxvk_2
     plugdata
     carla
-    #reaper
-    #reaper-sws-extension
-    #reaper-reapack-extension
 
     airwindows
     airwin2rack
@@ -130,7 +128,6 @@ let
     ingen
     infamousplugins
     caps
-    eq10q
     csa
     aeolus
     aeolus-stops
