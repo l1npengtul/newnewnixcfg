@@ -76,6 +76,8 @@
     reapkgs-known.url = "github:silvarc141/reapkgs-known/27487c09915f77cb8742936a1974897029055fee";
     reapkgs-extras.url = "github:l1npengtul/reapkgs-extras/8f709e959a7ed37e884067bc6fd4d3e423582fb4";
 
+    supernote-inkflow-nixos.url = "github:l1npengtul/supernote-inkflow-nixos";
+
     yasl = {
       url = "github:l1npengtul/yasl";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -125,6 +127,7 @@
       nix-index-database,
       nix-minecraft,
       nixos-needsreboot,
+      supernote-inkflow-nixos,
       yasl,
       disko,
       disko-zfs,
@@ -216,6 +219,7 @@
             nixos-hardware.nixosModules.common-gpu-amd
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-pc-ssd
+            supernote-inkflow-nixos.nixosModules.supernoteWaylandFix
 
             ./hosts/clubcyberia
           ]
@@ -233,6 +237,7 @@
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-pc-ssd
             nixos-hardware.nixosModules.common-hidpi
+            supernote-inkflow-nixos.nixosModules.supernoteWaylandFix
 
             ./hosts/penrose512
           ]
@@ -251,6 +256,7 @@
             nixos-hardware.nixosModules.common-cpu-intel
             nixos-hardware.nixosModules.common-pc-laptop
             nixos-hardware.nixosModules.common-hidpi
+            supernote-inkflow-nixos.nixosModules.supernoteWaylandFix
 
             ./hosts/oldhome
           ]

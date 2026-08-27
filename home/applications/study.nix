@@ -4,6 +4,7 @@
     qc
     zotero
     qnotero
+    calibre
   ];
 
   services.flatpak.packages = [

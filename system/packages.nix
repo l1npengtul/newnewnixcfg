@@ -54,6 +54,7 @@ let
     lldb
     lld
     rkdeveloptool
+    usbutils
   ];
   diskmgmt = with pkgs; [
     util-linux
@@ -66,6 +67,7 @@ let
     woeusb-ng
     unetbootin
     e2fsprogs
+    exfatprogs
   ];
   udf = with pkgs; [ udftools ];
   gaming = with pkgs; [
@@ -79,6 +81,7 @@ let
     yabridgectl
     yabridge
     wineWow64Packages.yabridge
+    sonic-visualiser
 
     odin2
     surge-xt

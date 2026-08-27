@@ -38,14 +38,14 @@ in
     musnix = lib.mkIf (cfg.type == "music") {
       enable = true;
       rtcqs.enable = true;
-      alsaSeq.enable = true;
-      rtirq.enable = true;
+      #  alsaSeq.enable = true;
+      #  rtirq.enable = true;
     };
-    services.udev = lib.mkIf (cfg.type == "music") {
-      extraRules = ''
-        DEVPATH=="/devices/virtual/misc/cpu_dma_latency", OWNER="root", GROUP="audio", MODE="0660"
-      '';
-    };
-    security.rtkit = lib.mkIf (cfg.type == "music") { enable = true; };
+    #services.udev = lib.mkIf (cfg.type == "music") {
+    #  extraRules = ''
+    #    DEVPATH=="/devices/virtual/misc/cpu_dma_latency", OWNER="root", GROUP="audio", MODE="0660"
+    #  '';
+    #};
+    #security.rtkit = lib.mkIf (cfg.type == "music") { enable = true; };
   };
 }
