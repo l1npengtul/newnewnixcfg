@@ -15,6 +15,7 @@
       }
       "Zotero"
       ".BitwigStudio"
+      ".clap"
       ".config"
       ".local"
       ".logseq"

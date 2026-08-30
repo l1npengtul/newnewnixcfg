@@ -104,6 +104,7 @@ let
     dxvk_2
     plugdata
     carla
+    ysfx
 
     airwindows
     airwin2rack
