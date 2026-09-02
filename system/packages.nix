@@ -82,6 +82,9 @@ let
     yabridge
     wineWow64Packages.yabridge
     sonic-visualiser
+    lilypond
+    openutau
+    rosegarden
 
     odin2
     surge-xt
