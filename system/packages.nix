@@ -118,6 +118,14 @@ let
     socalabs-voc
     decent-sampler
     friture
+    x42-plugins
+    x42-gmsynth
+    x42-avldrums
+    meters-lv2
+    sfizz
+    fluidsynth
+    qsynth
+    fluida-lv2
 
     flac
 
@@ -130,8 +138,11 @@ let
     bespokesynth
     oxefmsynth
 
+    sorcer
+
     bjumblr
     bslizr
+    bshapr
     ingen
     infamousplugins
     caps
