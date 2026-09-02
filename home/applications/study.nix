@@ -1,6 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   home.packages = with pkgs; [
-    anki-bin
+    pkgs-unstable.anki
     qc
     zotero
     qnotero
