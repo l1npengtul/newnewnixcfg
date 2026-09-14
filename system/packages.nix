@@ -13,6 +13,27 @@ let
   sfzq = pkgs-unstable.callPackage ./vsts/sfzq { };
   pianoteq = pkgs-unstable.callPackage ./vsts/pianoteq.nix { };
 
+  rosegarden-hidpi =
+    pkgs-unstable.runCommand "rosegarden"
+      {
+        buildInputs = [ pkgs-unstable.makeWrapper ];
+      }
+      ''
+        mkdir $out
+        # Link every top-level folder from pkgs.hello to our new target
+        ln -s ${pkgs-unstable.rosegarden}/* $out
+        # Except the bin folder
+        rm $out/bin
+        mkdir $out/bin
+        # We create the bin folder ourselves and link every binary in it
+        ln -s ${pkgs-unstable.rosegarden}/bin/* $out/bin
+        # Except the hello rosegarden
+        rm $out/bin/rosegarden
+        # Because we create this ourself, by creating a wrapper
+        makeWrapper ${pkgs-unstable.rosegarden}/bin/rosegarden $out/bin/rosegarden \
+          --set QT_SCALE_FACTOR 2
+      '';
+
   base = with pkgs; [
     # nix utilities
     nixfmt-tree
@@ -55,6 +76,7 @@ let
     lld
     rkdeveloptool
     usbutils
+    nixpkgs-review
   ];
   diskmgmt = with pkgs; [
     util-linux
@@ -68,6 +90,7 @@ let
     unetbootin
     e2fsprogs
     exfatprogs
+    smartmontools
   ];
   udf = with pkgs; [ udftools ];
   gaming = with pkgs; [
@@ -84,7 +107,7 @@ let
     sonic-visualiser
     lilypond
     openutau
-    rosegarden
+    rosegarden-hidpi
 
     odin2
     surge-xt
