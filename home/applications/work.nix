@@ -23,6 +23,8 @@ in
     gimp
     trenchbroom
 
+    godotPackages.godot
+
     libreoffice-qt
     hunspell
     hyphenDicts.all
