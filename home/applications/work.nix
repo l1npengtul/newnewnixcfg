@@ -9,6 +9,10 @@ let
   rpgm-archive-decrypter = pkgs.callPackage ./rpgm/rpgm-archive-decrypter.nix { };
   rvpacker-txt-rs = pkgs.callPackage ./rvpacker/rvpacker-txt-rs.nix { };
   trenchbroom = pkgs-unstable.callPackage ./trenchbroom/package.nix { };
+
+  ff-alias = pkgs.writeShellScriptBin "firefox" ''
+  ${pkgs.firefox-devedition}/bin/firefox-devedition $@
+  '';
 in
 {
   home.packages = with pkgs; [
@@ -30,6 +34,8 @@ in
     hyphenDicts.all
     hunspellDicts.ko-kr
     hunspellDicts.en-gb-large
+
+    ff-alias
   ];
   programs.obs-studio = {
     enable = true;
@@ -39,6 +45,7 @@ in
     configPath = "${config.xdg.configHome}/mozilla/firefox";
     package = pkgs.firefox-devedition;
   };
+  
   programs.thunderbird = {
     enable = true;
     profiles."default".isDefault = true;
