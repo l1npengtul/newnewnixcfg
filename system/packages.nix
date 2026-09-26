@@ -14,7 +14,7 @@ let
   pianoteq = pkgs-unstable.callPackage ./vsts/pianoteq.nix { };
 
   rosegarden-hidpi =
-    pkgs-unstable.runCommand "rosegarden"
+    pkgs-unstable.runCommand "rosegarden-hidpi"
       {
         buildInputs = [ pkgs-unstable.makeWrapper ];
       }
@@ -108,6 +108,7 @@ let
     lilypond
     openutau
     rosegarden-hidpi
+    rosegarden
 
     odin2
     surge-xt
