@@ -30,7 +30,7 @@ let
         # Except the hello rosegarden
         rm $out/bin/rosegarden
         # Because we create this ourself, by creating a wrapper
-        makeWrapper ${pkgs-unstable.rosegarden}/bin/rosegarden $out/bin/rosegarden \
+        makeWrapper ${pkgs-unstable.rosegarden}/bin/rosegarden $out/bin/rosegarden-hidpi \
           --set QT_SCALE_FACTOR 2
       '';
 
