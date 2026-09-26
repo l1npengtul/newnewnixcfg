@@ -33,7 +33,7 @@
   };
 
   hardware.audio-type.enable = true;
-  hardware.audio-type.type = "music";
+  hardware.audio-type.type = "standard";
 
   hardware.battery-optimisations.enable = true;
 

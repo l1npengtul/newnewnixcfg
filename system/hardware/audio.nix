@@ -13,11 +13,10 @@ in
       type = lib.mkOption {
         description = "what type of audio system to use";
         type = lib.types.enum [
-          "none"
           "standard"
           "music"
         ];
-        default = "none";
+        default = "standard";
       };
     };
   };
