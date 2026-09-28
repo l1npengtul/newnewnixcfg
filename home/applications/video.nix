@@ -11,5 +11,6 @@
     vlc
     ffmpeg-full
     mkvtoolnix
+    kdePackages.kdenlive
   ];
 }
