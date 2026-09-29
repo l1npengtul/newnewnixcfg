@@ -77,6 +77,9 @@ let
     rkdeveloptool
     usbutils
     nixpkgs-review
+    micro
+    ripgrep
+    vim
   ];
   diskmgmt = with pkgs; [
     util-linux
@@ -101,6 +104,7 @@ let
     bitwig-studio6
     reaper
     bottles
+    winboat
     yabridgectl
     yabridge
     wineWow64Packages.yabridge
@@ -215,6 +219,10 @@ in
       ++ lib.lists.optionals cfg.music.enable music;
 
     services.udev.packages = [ ] ++ lib.lists.optionals cfg.keyboard.enable keyboard;
+
+    services.udisks2 = lib.mkIf cfg.udf.enable {
+    	enable = true;
+    };
 
     programs.git = lib.mkIf cfg.programming.enable {
       enable = true;

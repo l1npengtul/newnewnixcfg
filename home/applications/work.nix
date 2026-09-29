@@ -11,7 +11,7 @@ let
   trenchbroom = pkgs-unstable.callPackage ./trenchbroom/package.nix { };
 
   ff-alias = pkgs.writeShellScriptBin "firefox" ''
-  ${pkgs.firefox-devedition}/bin/firefox-devedition $@
+    ${pkgs.firefox-devedition}/bin/firefox-devedition $@
   '';
 in
 {
@@ -45,7 +45,7 @@ in
     configPath = "${config.xdg.configHome}/mozilla/firefox";
     package = pkgs.firefox-devedition;
   };
-  
+
   programs.thunderbird = {
     enable = true;
     profiles."default".isDefault = true;
@@ -73,5 +73,4 @@ in
   };
 
   services.protonmail-bridge.enable = true;
-
 }
